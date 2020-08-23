@@ -1,8 +1,7 @@
 FROM wordpress:php7.2-fpm
 
 RUN apt update && apt install openssh-server libxml2-dev libmemcached-tools memcached zlib1g-dev libpq-dev libmemcached-dev vim -y \
-    && echo '' | pecl install memcached && docker-php-ext-enable memcached \
-    && echo "extension=$(find /usr/local/lib/php/extensions/ -name memcached.so)" > /usr/local/etc/php/conf.d/memcached.ini
+    && echo '' | pecl install memcached && docker-php-ext-enable memcached 
 
 RUN echo 'Port 			2222\n\
 ListenAddress 		0.0.0.0\n\
