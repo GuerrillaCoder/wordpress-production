@@ -1,6 +1,6 @@
 FROM wordpress:php7.4-fpm
 
-RUN apt update && apt install openssh-server libxml2-dev libmemcached-tools memcached zlib1g-dev libpq-dev libmemcached-dev vim -y \
+RUN apt update && apt install htop openssh-server libxml2-dev libmemcached-tools memcached zlib1g-dev libpq-dev libmemcached-dev vim -y \
     && echo '' | pecl install memcached && docker-php-ext-enable memcached 
 
 RUN echo 'Port 			2222\n\
